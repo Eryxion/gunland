@@ -1,0 +1,23 @@
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>hello-world</title><script defer="defer" src="js/chunk-vendors-8787c537.0a2a0592.js"></script><script defer="defer" src="js/chunk-vendors-e1bed6ae.3ea09abb.js"></script><script defer="defer" src="js/chunk-vendors-acb38a64.7ebb0305.js"></script><script defer="defer" src="js/chunk-vendors-8cbd2506.780a0575.js"></script><script defer="defer" src="js/app.e58e70e6.js"></script><link href="css/app.f23c8a5e.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but hello-world doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>window.e_trigger = function(name, ...args) { mp.trigger(name, ...args); };
+      window.e_invoke = function(name, ...args) { mp.invoke(name, ...args); }; 
+      window.e_add = function(name, ...args) { mp.events.add(name, ...args); };</script><script src="rage-rpc.umd.js"></script><script>window.e_rpc = function(name, ...args) {
+        return new Promise(function(resolve, reject) {
+          resolve(rpc.callServer(name, ...args));
+        });
+      }  
+      window.c_rpc = function(name, ...args) {
+        return new Promise(function(resolve, reject) {
+            resolve(rpc.callClient(name, ...args));
+        });
+      }
+    
+      window.e_rpc.add = function(name, ...args) {
+        return new Promise(function(resolve, reject) {
+            resolve(rpc.register(name, ...args));
+        }); 
+      }
+      window.e_rpc.remove = function(name) {
+        return new Promise(function(resolve, reject) {
+            resolve(rpc.unregister(name));
+        }); 
+      }</script></body></html>
