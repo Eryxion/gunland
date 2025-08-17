@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mugshot Capture (RAGE.MP)</title>
+</head>
+<body>
+<script>
+    var image = document.getElementById("html5");
+    var canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.style.display = 'none';
+
+    var context = canvas.getContext("2d");
+    // Create an image object. This is not attached to the DOM and is not part of the page.
+    mp.events.add("recieveHeadshotImage", (imgURL, screenResolution) => {
+        var image = new Image();
+        image.onload = function () {
+            screenResolution = JSON.parse(screenResolution);
+            const width = (screenResolution.x / 11);
+            const height = (screenResolution.y / 6);
+            canvas.width = width;
+            canvas.height = height;
+            console.log(screenResolution, width, height);
+            context.drawImage(image, 0, 0, width, height, 0, 0, width, height);
+            const base64 = canvas.toDataURL("image/jpg", 1);
+            console.log(base64);
+            mp.trigger("uploadHeadshot", base64);
+        }
+        image.crossOrigin = 'Anonymous';
+        image.src = imgURL;
+    })
+
+</script>
+</body>
+</html>

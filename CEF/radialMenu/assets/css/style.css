@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+body{
+    user-select: none;
+	font-family: 'Inter', sans-serif; 
+	font-weight: 600;
+}
+@keyframes hexShow {
+    0%    {transform: scale(0);}
+    100%   {transform: scale(1.2);}
+}
+.menu{
+    display: block;
+    position:absolute; 
+    top:30%;
+    left:35%;
+    color:white;
+    transform: scale(1.2);
+    animation: hexShow .7s;
+}
+.hexagon {
+	width: 100px;
+	height: 55px;
+	background-color: #1e2530;
+	position: absolute;
+	text-align: center;
+}
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid #1e2530;
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #1e2530;
+}
+.hexagon:hover::before{
+    border-bottom: 25px solid #9478ff;
+}
+.hexagon:hover::after{
+    border-top: 25px solid #9478ff;
+}
+.hexagon:hover{
+    background-color: #9478ff;
+	box-shadow: 0 0 15px #9478ff;
+}
+.hex-1 {
+	top: 25px;
+	left: 106px;
+}
+.hex-2 {
+	top: 110px;
+	left: 56px;
+}
+.hex-3 {
+	top: 195px;
+	left: 106px;
+}
+.hex-4 {
+	top: 25px;
+	left: 214px;
+}
+.hex-5 {
+	top: 195px;
+	left: 214px;
+}
+.hex-6 {
+	top: 110px;
+	left: 264px;
+}
+.close {
+	top: 110px;
+	left: 160px;
+}
+#label-1,#label-2,#label-3,#label-4,#label-5,#label-6,#label-close
+{
+	margin-top: 5px;
+	font-weight: 600;
+	letter-spacing: 1px;
+    font-size: 1vh;
+}    
